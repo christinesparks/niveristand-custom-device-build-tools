@@ -7,6 +7,7 @@ class Test extends AbstractStepStage {
    }
 
    void executeStage() {
+      script.echo '$configuration.test.sequence_location'
       executeSteps(configuration.test)
    }
 }
