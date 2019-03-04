@@ -5,7 +5,6 @@ class StepFactory implements Serializable {
    static List<Step> createSteps(script, stepList, lvVersion) {
       List<Step> steps = []
       def mapSteps = stepList.get('steps')
-      script.echo '$mapSteps'
       for (def mapStep : mapSteps) {
          Step step = StepFactory.createStep(script, mapStep, lvVersion)
          def stepName = step.name
