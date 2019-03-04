@@ -80,6 +80,8 @@ class Pipeline implements Serializable {
 
    void execute() {
 
+      script.echo "Executing Pipeline"
+      
       // build dependencies before starting this pipeline
       script.buildDependencies(pipelineInformation)
 
