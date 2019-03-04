@@ -6,8 +6,8 @@ class TestRunSeqStep extends TestStep {
 
    def seq
 
-   TestRunSeqStep(script, mapStep, tsVersion) {
-      super(script, mapStep, tsVersion)
+   TestRunSeqStep(script, mapStep) {
+      super(script, mapStep)
       //this.seq = mapStep.get('seq')
    }
 
