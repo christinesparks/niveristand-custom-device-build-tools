@@ -113,6 +113,9 @@ class Pipeline implements Serializable {
                
                def builder = new Builder(script, configuration, lvVersion)
                this.stages = builder.buildPipeline()
+               
+               def numSteps = this.stages.length
+               script.echo '#Stages = $numSteps'
 
                executeStages()
             }
