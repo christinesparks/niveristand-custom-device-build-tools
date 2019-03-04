@@ -97,9 +97,7 @@ class Pipeline implements Serializable {
 
          builders[lvVersion] = {
             script.node(nodeLabel) {
-               
-               script.echo "Setup"
-               
+                      
                setup(lvVersion)
                
                script.echo "Building Configuration"
@@ -131,7 +129,7 @@ class Pipeline implements Serializable {
    }
 
    private void setup(lvVersion) {
-      //def manifest = script.readJSON text: '{}'
+      def manifest = script.readJSON text: '{}'
 
       script.stage("Checkout_$lvVersion") {
          script.deleteDir()
