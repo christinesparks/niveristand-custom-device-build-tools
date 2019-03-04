@@ -89,17 +89,17 @@ class Pipeline implements Serializable {
 
          // need to bind the variable before the closure - can't do 'for (version in lvVersions)'
          def lvVersion = version
-         
-         script.echo "lvVersion"
 
          String nodeLabel = lvVersion
          if (pipelineInformation.nodeLabel?.trim()) {
             nodeLabel = "$nodeLabel && ${pipelineInformation.nodeLabel}"
-            script.echo "$nodeLabel"
          }
 
          builders[lvVersion] = {
             script.node(nodeLabel) {
+               
+               script.echo "Setup"
+               
                setup(lvVersion)
                
                script.echo "Building Configuration"
@@ -131,7 +131,7 @@ class Pipeline implements Serializable {
    }
 
    private void setup(lvVersion) {
-      def manifest = script.readJSON text: '{}'
+      //def manifest = script.readJSON text: '{}'
 
       script.stage("Checkout_$lvVersion") {
          script.deleteDir()
