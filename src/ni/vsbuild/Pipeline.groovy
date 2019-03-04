@@ -74,6 +74,7 @@ class Pipeline implements Serializable {
          }
          if(buildConfiguration.test) {
             withTestStage()
+            script.echo 'Adding test stage of $buildConfiguration.test'
          }
 
          return stages
@@ -112,8 +113,6 @@ class Pipeline implements Serializable {
                
                def builder = new Builder(script, configuration, lvVersion)
                this.stages = builder.buildPipeline()
-               
-               script.echo '$this.stages'
 
                executeStages()
             }
