@@ -9,8 +9,6 @@ parsed_toml = toml.load(file)
 base_path, file_name = os.path.split(file)
 json_file_name = os.path.splitext(file_name)[0] + '.json'
 
-script.echo "$json_file_name"
-
 print("Writing build description to", json_file_name)
 with open(json_file_name, 'w') as outfile:
     json.dump(parsed_toml, outfile, indent=3)
