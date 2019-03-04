@@ -40,6 +40,7 @@ class StepFactory implements Serializable {
       }
       
       if(type == 'test') {
+         script.echo 'Creating new Test Step'
          return new TestRunSeqStep(script, mapStep, lvVersion)
       }
 
