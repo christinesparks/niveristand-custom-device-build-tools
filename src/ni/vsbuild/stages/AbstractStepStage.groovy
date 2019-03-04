@@ -10,10 +10,11 @@ abstract class AbstractStepStage extends AbstractStage {
    }
 
    protected void executeSteps(def stepList) {
+      script.echo 'ExecuteSteps called'
       List<Step> steps = StepFactory.createSteps(script, stepList, lvVersion)
       for(Step step : steps) {
          script.echo 'Executing $step.'
-         step.execute(configuration)
+         script.execute(configuration)
       }
    }
 }
