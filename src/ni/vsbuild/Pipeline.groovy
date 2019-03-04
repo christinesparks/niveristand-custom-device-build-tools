@@ -69,13 +69,12 @@ class Pipeline implements Serializable {
             withPackageStage()
          }
 
-         if(buildConfiguration.archive) {
-            withArchiveStage()
-            script.echo 'Adding archive stage of $buildConfiguration.archive'
-         }
          if(buildConfiguration.test) {
             withTestStage()
-            script.echo 'Adding test stage of $buildConfiguration.test'
+         }
+         
+         if(buildConfiguration.archive) {
+            withArchiveStage()
          }
 
          return stages
