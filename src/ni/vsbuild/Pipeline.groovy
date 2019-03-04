@@ -89,10 +89,13 @@ class Pipeline implements Serializable {
 
          // need to bind the variable before the closure - can't do 'for (version in lvVersions)'
          def lvVersion = version
+         
+         script.echo "lvVersion"
 
          String nodeLabel = lvVersion
          if (pipelineInformation.nodeLabel?.trim()) {
             nodeLabel = "$nodeLabel && ${pipelineInformation.nodeLabel}"
+            script.echo "$nodeLabel"
          }
 
          builders[lvVersion] = {
