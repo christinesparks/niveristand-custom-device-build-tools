@@ -80,8 +80,6 @@ class Pipeline implements Serializable {
 
    void execute() {
 
-      script.echo "Executing Pipeline"
-      
       // build dependencies before starting this pipeline
       script.buildDependencies(pipelineInformation)
 
@@ -100,9 +98,13 @@ class Pipeline implements Serializable {
          builders[lvVersion] = {
             script.node(nodeLabel) {
                setup(lvVersion)
+               
+               script.echo "Building Configuration"
 
                def configuration = BuildConfiguration.load(script, JSON_FILE)
                configuration.printInformation(script)
+               
+               script.echo "Building Builder"
 
                def builder = new Builder(script, configuration, lvVersion)
                this.stages = builder.buildPipeline()
