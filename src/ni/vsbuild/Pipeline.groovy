@@ -40,6 +40,10 @@ class Pipeline implements Serializable {
       def withArchiveStage() {
          stages << new Archive(script, buildConfiguration, lvVersion)
       }
+      
+      def withTestStage() {
+         script.echo "Defined Test Stage"
+      }
 
       // The plan is to enable automatic merging from master to
       // release or hotfix branch packages and not build packages
