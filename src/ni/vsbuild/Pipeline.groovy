@@ -72,6 +72,9 @@ class Pipeline implements Serializable {
          if(buildConfiguration.archive) {
             withArchiveStage()
          }
+         if(buildConfiguration.test) {
+            withTestStage()
+         }
 
          return stages
       }
