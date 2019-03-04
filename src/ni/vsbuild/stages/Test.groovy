@@ -4,6 +4,7 @@ class Test extends AbstractStepStage {
 
    Test(script, configuration, lvVersion) {
       super(script, 'Test', configuration, lvVersion)
+      script.echo 'New Test'
    }
 
    void executeStage() {
