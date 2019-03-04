@@ -42,7 +42,7 @@ class Pipeline implements Serializable {
       }
       
       def withTestStage() {
-         script.echo "Defined Test Stage"
+         stages << new Test(script, buildConfiguration, lvVersion)
       }
 
       // The plan is to enable automatic merging from master to
@@ -106,14 +106,10 @@ class Pipeline implements Serializable {
             script.node(nodeLabel) {
                       
                setup(lvVersion)
-               
-               script.echo "Building Configuration"
 
                def configuration = BuildConfiguration.load(script, JSON_FILE)
                configuration.printInformation(script)
                
-               script.echo "Building Builder"
-
                def builder = new Builder(script, configuration, lvVersion)
                this.stages = builder.buildPipeline()
 
