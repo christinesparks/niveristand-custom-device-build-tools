@@ -35,6 +35,10 @@ class StepFactory implements Serializable {
       if(type == 'lvSetConditionalSymbol') {
          return new LvSetConditionalSymbolStep(script, mapStep, lvVersion)
       }
+      
+      if(type == 'test') {
+         return new TestRunSeqStep(script, mapStep, lvVersion)
+      }
 
       script.failBuild("Type \'$type\' is invalid for step \'${mapStep.get('name')}\'.")
    }
