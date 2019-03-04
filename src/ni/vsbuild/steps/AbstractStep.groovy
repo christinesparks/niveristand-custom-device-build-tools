@@ -10,7 +10,6 @@ abstract class AbstractStep implements Step {
    AbstractStep(script, mapStep) {
       this.script = script
       this.name = mapStep.get('name')
-      script.echo '$this.name'
    }
 
    void execute(BuildConfiguration configuration) {
