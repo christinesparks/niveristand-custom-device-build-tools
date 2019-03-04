@@ -29,9 +29,7 @@ class BuildConfiguration implements Serializable {
    }
 
    static BuildConfiguration load(def script, String jsonFile) {      
-      
-      script.echo "$jsonFile"
-      
+    
       def config = script.readJSON file: jsonFile
 
       // Convert the JSON to HashMaps instead of using the JsonObject
