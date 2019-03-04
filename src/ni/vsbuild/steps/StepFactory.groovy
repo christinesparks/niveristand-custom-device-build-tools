@@ -8,7 +8,8 @@ class StepFactory implements Serializable {
       script.echo '$mapSteps'
       for (def mapStep : mapSteps) {
          Step step = StepFactory.createStep(script, mapStep, lvVersion)
-         script.echo 'adding step'
+         def stepName = step.name
+         script.echo 'adding step $stepName'
          steps.add(step)
       }
 
