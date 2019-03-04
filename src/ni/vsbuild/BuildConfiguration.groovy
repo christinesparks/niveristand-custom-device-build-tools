@@ -45,7 +45,7 @@ class BuildConfiguration implements Serializable {
          convertedJson.codegen,
          convertedJson.build,
          convertedJson.dependencies,
-         convertedJson.package
+         convertedJson.package)
          //convertedJson.test)
    }
 
