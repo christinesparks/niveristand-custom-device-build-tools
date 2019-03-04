@@ -8,7 +8,7 @@ class TestRunSeqStep extends TestStep {
 
    TestRunSeqStep(script, mapStep, tsVersion) {
       super(script, mapStep, tsVersion)
-      this.seq = mapStep.get('seq')
+      //this.seq = mapStep.get('seq')
    }
 
    void executeStep(BuildConfiguration configuration) {
