@@ -7,7 +7,6 @@ class Test extends AbstractStepStage {
    }
 
    void executeStage() {
-      script.echo 'Executing Test Stage'
       executeSteps(configuration.test)
    }
 }
