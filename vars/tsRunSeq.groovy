@@ -18,4 +18,3 @@ def call(seq, tsVersion, tsBitness){
    bat "\"${seqEditorPath}\" /outputToStdIO /run MainSequence \"${sequencePath}\" /quit"
 
 }
-}
