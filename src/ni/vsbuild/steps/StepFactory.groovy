@@ -39,7 +39,7 @@ class StepFactory implements Serializable {
       }
       
       if(type == 'seq') {
-         return new TestRunSeqStep(script, mapStep, lvVersion)
+         return new TestRunSeqStep(script, mapStep)
       }
 
       script.failBuild("Type \'$type\' is invalid for step \'${mapStep.get('name')}\'.")
