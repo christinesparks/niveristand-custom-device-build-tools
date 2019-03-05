@@ -8,6 +8,7 @@ class Test extends AbstractStepStage {
 
    void executeStage() {
       script.echo 'I am $configuration.test.sequence_location'
+      script.echo 'My name is $this.name
       executeSteps(configuration.test)
    }
 }
