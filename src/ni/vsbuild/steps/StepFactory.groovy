@@ -17,8 +17,6 @@ class StepFactory implements Serializable {
 
    static Step createStep(script, mapStep, lvVersion) {
       def type = mapStep.get('type')
-      
-      script.echo 'creating step of type $type'
 
       if(type == 'lvBuildAll') {
          return new LvBuildAllStep(script, mapStep, lvVersion)
@@ -41,7 +39,6 @@ class StepFactory implements Serializable {
       }
       
       if(type == 'seq') {
-         script.echo 'Creating new Test Step'
          return new TestRunSeqStep(script, mapStep, lvVersion)
       }
 
