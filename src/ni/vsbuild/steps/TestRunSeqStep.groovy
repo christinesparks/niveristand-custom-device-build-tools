@@ -16,6 +16,7 @@ class TestRunSeqStep extends TestStep {
    }
 
    void executeStep(BuildConfiguration configuration) {
-      script.tsRunSeq(seq, tsVersion, tsBitness)
+      script.echo 'Run Test'
+      //script.tsRunSeq(seq, tsVersion, tsBitness)
    }
 }
