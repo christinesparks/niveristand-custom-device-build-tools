@@ -10,7 +10,7 @@ class TestRunSeqStep extends TestStep {
 
    TestRunSeqStep(script, mapStep) {
       super(script, mapStep)
-      this.seq = mapStep.get('seq')
+      this.seq = mapStep.get('sequence_location')
       this.tsVersion = mapStep.get('teststand_version')
       this.tsBitness = mapStep.get('teststand_bitness')
    }
