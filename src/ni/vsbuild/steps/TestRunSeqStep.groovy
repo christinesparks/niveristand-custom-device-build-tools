@@ -13,7 +13,9 @@ class TestRunSeqStep extends TestStep {
 
    void executeStep(BuildConfiguration configuration) {
       
-      script.echo 'Called Execute Test Step with sequence $seq'
+      def debugString = self.seq
+      
+      script.echo 'Called Execute Test Step with sequence $debugString'
       
       //script.tsRunSeq(seq, tsVersion)
    }
