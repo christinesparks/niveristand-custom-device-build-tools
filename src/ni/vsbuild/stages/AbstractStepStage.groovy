@@ -13,6 +13,7 @@ abstract class AbstractStepStage extends AbstractStage {
       List<Step> steps = StepFactory.createSteps(script, stepList, lvVersion)
       for(Step step : steps) {
          script.echo 'executing configuration'
+         configuration.printInformation()
          script.execute(configuration)
       }
    }
