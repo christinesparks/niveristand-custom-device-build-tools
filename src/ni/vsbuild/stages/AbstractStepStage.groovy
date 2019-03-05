@@ -14,7 +14,7 @@ abstract class AbstractStepStage extends AbstractStage {
       for(Step step : steps) {
          script.echo 'executing configuration'
          configuration.printInformation(script)
-         script.execute(configuration)
+         step.execute(configuration)
       }
    }
 }
