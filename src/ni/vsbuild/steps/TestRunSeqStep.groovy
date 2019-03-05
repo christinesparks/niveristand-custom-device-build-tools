@@ -9,9 +9,6 @@ class TestRunSeqStep extends TestStep {
    TestRunSeqStep(script, mapStep) {
       super(script, mapStep)
       this.seq = mapStep.get('seq')
-      
-      script.echo 'I am a new test run seq step'
-      
    }
 
    void executeStep(BuildConfiguration configuration) {
