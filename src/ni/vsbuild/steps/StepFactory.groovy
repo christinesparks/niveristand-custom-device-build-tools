@@ -40,7 +40,7 @@ class StepFactory implements Serializable {
          return new LvSetConditionalSymbolStep(script, mapStep, lvVersion)
       }
       
-      if(type == 'Test') {
+      if(type == 'seq') {
          script.echo 'Creating new Test Step'
          return new TestRunSeqStep(script, mapStep, lvVersion)
       }
