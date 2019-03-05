@@ -5,5 +5,5 @@ import ni.vsbuild.BuildConfiguration
 interface Step extends Serializable {
 
    void execute(BuildConfiguration configuration)
-
+      script.echo 'just a step'
 }
